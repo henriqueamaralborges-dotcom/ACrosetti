@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <radialGradient id="ggjGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D2FF00" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0E0E11" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotGridJam" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2E2E38"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#111115"/>
+  <rect width="600" height="400" fill="url(#dotGridJam)" opacity="0.5"/>
+  <circle cx="300" cy="200" r="180" fill="url(#ggjGlow)"/>
+
+  <!-- Geometric Frame -->
+  <polygon points="40,30 560,30 580,350 40,370" fill="#16161C" stroke="#282832" stroke-width="1.5"/>
+  <polygon points="40,30 180,30 160,50 40,50" fill="#D2FF00"/>
+  <text x="50" y="44" fill="#0E0E11" font-family="'Space Grotesk', monospace" font-size="11" font-weight="900" letter-spacing="1">COMPETIÇÃO // GAME DEV</text>
+
+  <!-- Gamepad / Arcade Cyber Console Wireframe -->
+  <g transform="translate(300, 200)">
+    <!-- Controller body -->
+    <path d="M-130,-40 C-90,-80 90,-80 130,-40 C170,0 180,90 140,110 C110,125 70,60 40,60 L-40,60 C-70,60 -110,125 -140,110 C-180,90 -170,0 -130,-40 Z" fill="#1F2026" stroke="#D2FF00" stroke-width="2.5"/>
+    
+    <!-- D-Pad Left -->
+    <path d="M-85,-15 H-70 V-30 H-55 V-15 H-40 V0 H-55 V15 H-70 V0 H-85 Z" fill="#2E303B" stroke="#D2FF00" stroke-width="1.5"/>
+    
+    <!-- Action Buttons Right (Geometric diamond) -->
+    <circle cx="65" cy="-20" r="8" fill="#D2FF00"/>
+    <circle cx="45" cy="0" r="8" fill="#1A1A20" stroke="#FFFFFF" stroke-width="1.5"/>
+    <circle cx="85" cy="0" r="8" fill="#1A1A20" stroke="#00F0FF" stroke-width="1.5"/>
+    <circle cx="65" cy="20" r="8" fill="#1A1A20" stroke="#D2FF00" stroke-width="1.5"/>
+
+    <!-- Central Tech Display Screen -->
+    <rect x="-30" y="-35" width="60" height="30" rx="3" fill="#0E0E12" stroke="#00F0FF" stroke-width="1"/>
+    <text x="0" y="-16" fill="#00F0FF" font-family="'Space Grotesk', monospace" font-size="9" font-weight="700" text-anchor="middle">GGJ NEXT</text>
+
+    <!-- Star / Trophy Vector -->
+    <path d="M0,80 L8,96 L26,98 L13,110 L16,128 L0,119 L-16,128 L-13,110 L-26,98 L-8,96 Z" fill="#D2FF00" opacity="0.9"/>
+  </g>
+
+  <!-- High-tech tags -->
+  <g transform="translate(60, 310)">
+    <rect x="0" y="0" width="130" height="26" rx="3" fill="#D2FF00" fill-opacity="0.1" stroke="#D2FF00" stroke-width="1"/>
+    <text x="65" y="17" fill="#D2FF00" font-family="'Space Grotesk', monospace" font-size="10" font-weight="700" text-anchor="middle">ETAPA ESCOLAR: 1º</text>
+  </g>
+
+  <g transform="translate(205, 310)">
+    <rect x="0" y="0" width="165" height="26" rx="3" fill="#00F0FF" fill-opacity="0.1" stroke="#00F0FF" stroke-width="1"/>
+    <text x="82" y="17" fill="#00F0FF" font-family="'Space Grotesk', monospace" font-size="10" font-weight="700" text-anchor="middle">CAMPEONATO: FINALISTA</text>
+  </g>
+
+  <text x="540" y="330" fill="#71717A" font-family="'Space Grotesk', monospace" font-size="11" text-anchor="end">LEVEL: HIGH COMPETITIVE</text>
+</svg>

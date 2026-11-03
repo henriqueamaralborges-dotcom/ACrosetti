@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henrique Amaral Borges // Inteligência Artificial & Engenharia Mecatrônica</title>
+  <meta name="description" content="Site pessoal de Henrique Amaral Borges. Estudante do 1º ano do Ensino Médio Técnico em Inteligência Artificial e futuro Engenheiro Mecatrônico.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Henrique Amaral Borges // IA & Mecatrônica">
+  <meta property="og:description" content="Estudante do Ensino Médio Técnico em IA, futuro Engenheiro Mecatrônico, finalista da Global Game Jam Next e experiência profissional no setor audiovisual.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/hab-logo.svg">
+</head>
+<body>
+
+  <!-- Dynamic Cursor Glow FX -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- =================================================================
+       NAVIGATION HEADER
+       ================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Monogram Brand Logo replacing LN4 -->
+      <a href="#hero" class="brand-link" aria-label="Henrique Amaral Borges - Página Inicial">
+        <img src="assets/hab-logo.svg" alt="HAB Monograma" class="brand-logo-img">
+        <span class="brand-badge">TECH // IA</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação Principal">
+        <a href="#hero" class="nav-link"><span>//</span>01. Início</a>
+        <a href="#destaques" class="nav-link"><span>//</span>02. Conquistas</a>
+        <a href="#sobre" class="nav-link"><span>//</span>03. Biografia</a>
+        <a href="#trajetoria" class="nav-link"><span>//</span>04. Trajetória</a>
+        <a href="#contato" class="nav-link"><span>//</span>05. Contato</a>
+      </nav>
+
+      <!-- Header Status Actions -->
+      <div class="header-actions">
+        <div class="live-telemetry">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>STATUS: ONLINE // IA</span>
+        </div>
+
+        <!-- Futuristic UI Audio Toggle -->
+        <button id="audioToggle" class="audio-toggle-btn" title="Alternar efeitos sonoros da interface">
+          <span>○</span> AUDIO: OFF
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir Menu">MENU ☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =================================================================
+         HERO SECTION / CABEÇALHO DE IMPACTO
+         ================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-backdrop-glow" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-tag-badge">
+            <span class="bracket">[</span>
+            <span>01 // PORTFÓLIO OFICIAL &mdash; SP / BRASIL</span>
+            <span class="bracket">]</span>
+          </div>
+
+          <!-- Impact Headline Replacing Lando Norris -->
+          <h1 class="hero-title">
+            <span class="title-line">HENRIQUE</span>
+            <span class="title-line accent">AMARAL</span>
+            <span class="title-line outline">BORGES</span>
+          </h1>
+
+          <!-- Subtitle / Role Replacing Driver Category -->
+          <div class="hero-subtitle-box">
+            <div class="hero-role-label">
+              <span>●</span>
+              <span>FORMAÇÃO &amp; ATUAÇÃO</span>
+            </div>
+            <p class="hero-role-text">
+              Estudante do <strong>1º ano do Ensino Médio Técnico em Inteligência Artificial</strong> e futuro <strong>Engenheiro Mecatrônico</strong>.
+            </p>
+          </div>
+
+          <!-- Quick Telemetry HUD -->
+          <div class="hero-telemetry-row">
+            <div class="telemetry-item">
+              <span class="label">ÁREA FOCO</span>
+              <span class="value">IA &amp; ROBÓTICA</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="label">COMPETIÇÃO</span>
+              <span class="value">GLOBAL GAME JAM</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="label">MERCADO</span>
+              <span class="value">AUDIOVISUAL PRO</span>
+            </div>
+          </div>
+
+          <!-- High-Tech CTAs -->
+          <div class="hero-cta-group">
+            <a href="#destaques" class="btn btn-primary">
+              EXPLORAR DESTAQUES
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 4v14"/></svg>
+            </a>
+            <a href="#sobre" class="btn btn-secondary">
+              VER TRAJETÓRIA
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Tabbed Switcher (Official Portrait & 3D Core Simulation) -->
+        <div class="hero-visual-card">
+          <div class="hero-visual-header">
+            <div class="hud-dots">
+              <span class="hud-dot red"></span>
+              <span class="hud-dot yellow"></span>
+              <span class="hud-dot cyan"></span>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="hero-tab-switcher">
+              <button class="hero-tab-btn active" data-target="viewPortrait" id="tabPortrait">
+                RETRATO // OFICIAL
+              </button>
+              <button class="hero-tab-btn" data-target="viewCanvas" id="tabCanvas">
+                NÚCLEO 3D // SIMULAÇÃO
+              </button>
+            </div>
+          </div>
+
+          <!-- PANEL 1: Official Cyber-Motorsport Portrait -->
+          <div class="hero-view-panel active" id="viewPortrait">
+            <div class="hero-portrait-wrapper">
+              <img src="assets/henrique-portrait.jpg" alt="Henrique Amaral Borges - Retrato Oficial" class="hero-portrait-img">
+              <div class="hero-portrait-overlay">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <span class="overlay-corner top-left">ID: HAB-01 // INNOVATOR</span>
+                  <span class="overlay-corner top-right">STATUS: ATIVO ●</span>
+                </div>
+
+                <div class="hero-portrait-footer-info">
+                  <div class="hero-name-badge">
+                    <div class="name">HENRIQUE AMARAL</div>
+                    <div class="sub">IA &amp; MECATRÔNICA // LOKAR FECART</div>
+                  </div>
+                  <span class="overlay-corner bottom-right">VERIFIED TALENT</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-visual-footer">
+              <span>FOTOGRAFIA OFICIAL &bull; ENSINO MÉDIO TÉCNICO</span>
+              <span class="hint">[ CLIQUE NA ABA ACIMA PARA MODO 3D ]</span>
+            </div>
+          </div>
+
+          <!-- PANEL 2: 3D Mechatronic Core Simulation -->
+          <div class="hero-view-panel" id="viewCanvas">
+            <div class="hero-canvas-wrapper">
+              <canvas id="heroCanvas"></canvas>
+              <div class="hero-visual-overlay">
+                <span class="overlay-corner top-left">MODEL: VISION_NEURAL_3D</span>
+                <span class="overlay-corner top-right">FOV: 350 | FPS: 60</span>
+                <span class="overlay-corner bottom-left">MECATRONICS TELEMETRY: OK</span>
+                <span class="overlay-corner bottom-right">SENSOR BUS: 100%</span>
+              </div>
+            </div>
+            <div class="hero-visual-footer">
+              <span>HAB // CORE SENSOR GRID</span>
+              <span class="hint">[ INTERAÇÃO ATIVA COM O CURSOR ]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         INFINITE MARQUEE TICKER (Lando Norris Signature Style)
+         ================================================================= -->
+    <section class="marquee-ticker-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <span>INTELIGÊNCIA ARTIFICIAL</span>
+          <span class="separator">//</span>
+          <span class="highlight">ENGENHARIA MECATRÔNICA</span>
+          <span class="separator">//</span>
+          <span>GLOBAL GAME JAM NEXT</span>
+          <span class="separator">//</span>
+          <span class="highlight">LOKAR AUDIOVISUAL</span>
+          <span class="separator">//</span>
+          <span>FECART</span>
+          <span class="separator">//</span>
+          <span>VITAL BRASIL</span>
+          <span class="separator">//</span>
+          <span class="highlight">AGOSTINIANO MENDEL</span>
+          <span class="separator">//</span>
+          <span>EXATUS</span>
+          <span class="separator">//</span>
+          <span class="highlight">HENRIQUE AMARAL BORGES</span>
+          <span class="separator">//</span>
+        </div>
+        <!-- Duplicate for seamless continuous loop -->
+        <div class="marquee-item">
+          <span>INTELIGÊNCIA ARTIFICIAL</span>
+          <span class="separator">//</span>
+          <span class="highlight">ENGENHARIA MECATRÔNICA</span>
+          <span class="separator">//</span>
+          <span>GLOBAL GAME JAM NEXT</span>
+          <span class="separator">//</span>
+          <span class="highlight">LOKAR AUDIOVISUAL</span>
+          <span class="separator">//</span>
+          <span>FECART</span>
+          <span class="separator">//</span>
+          <span>VITAL BRASIL</span>
+          <span class="separator">//</span>
+          <span class="highlight">AGOSTINIANO MENDEL</span>
+          <span class="separator">//</span>
+          <span>EXATUS</span>
+          <span class="separator">//</span>
+          <span class="highlight">HENRIQUE AMARAL BORGES</span>
+          <span class="separator">//</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         GRID DE DESTAQUES & CONQUISTAS
+         ================================================================= -->
+    <section class="destaques-section" id="destaques">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-tag">
+            <span>[ 02 // CONQUISTAS &amp; IMPACTO ]</span>
+          </div>
+          <h2 class="section-title">
+            GRID DE <span class="accent">DESTAQUES</span>
+          </h2>
+          <p class="section-desc">
+            Grandes marcos competitivos e vivências no mercado técnico que consolidam disciplina, alta performance e visão inovadora.
+          </p>
+        </div>
+
+        <!-- Bento Grid Structure -->
+        <div class="destaques-grid">
+          
+          <!-- DESTAQUE 1: Global Game Jam Next -->
+          <article class="destaque-card span-7">
+            <span class="corner-bracket" aria-hidden="true"></span>
+            
+            <div class="destaque-badge-row">
+              <span class="pill-badge primary">COMPETIÇÃO GLOBAL</span>
+              <span class="pill-badge cyan">GAME DEV &amp; LÓGICA</span>
+              <span class="pill-badge">ETAPA ESCOLAR &amp; CAMPEONATO</span>
+            </div>
+
+            <h3 class="destaque-title">GLOBAL GAME JAM NEXT</h3>
+            <p class="destaque-headline">Finalista da Etapa Escolar e Campeonato Geral</p>
+
+            <!-- Custom AI-themed Vector Visual Asset -->
+            <div class="destaque-media-box">
+              <img src="assets/game-jam.svg" alt="Ilustração gráfica da Global Game Jam Next" loading="lazy">
+            </div>
+
+            <p class="destaque-desc">
+              Atuação decisiva na criação e desenvolvimento ágil de jogos durante a <strong>Global Game Jam Next</strong>, superando as etapas classificatórias na escola e alcançando o estágio de <strong>finalista do campeonato</strong>. O desafio exigiu prototipagem sob extrema pressão, resolução de problemas algorítmicos e sinergia de equipe.
+            </p>
+
+            <div class="destaque-footer-meta">
+              <span>RESULTADO: <strong class="metric">FINALISTA OFICIAL</strong></span>
+              <span>TAG: #GAMEJAM #INNOVATION</span>
+            </div>
+          </article>
+
+          <!-- DESTAQUE 2: Lokar Audiovisual / Fecart -->
+          <article class="destaque-card span-5">
+            <span class="corner-bracket" aria-hidden="true"></span>
+
+            <div class="destaque-badge-row">
+              <span class="pill-badge cyan">EXPERIÊNCIA DE MERCADO</span>
+              <span class="pill-badge primary">PATROCÍNIO OFICIAL</span>
+            </div>
+
+            <h3 class="destaque-title">LOKAR AUDIOVISUAL</h3>
+            <p class="destaque-headline">Captação de Patrocínio na Fecart &amp; Atuação Profissional</p>
+
+            <!-- Photographic Real Proof: Henrique wearing Lokar Audiovisual shirt -->
+            <div class="lokar-portrait-highlight">
+              <img src="assets/henrique-portrait.jpg" alt="Henrique Amaral Borges com a camiseta da Lokar Audiovisual" class="lokar-portrait-img">
+              <div class="lokar-portrait-badge">
+                <span style="color: var(--color-cyan); font-weight: 700;">● REGISTRO OFICIAL // FECART</span>
+                <span style="color: var(--color-primary); font-weight: 800;">LOKAR AUDIOVISUAL</span>
+              </div>
+            </div>
+
+            <p class="destaque-desc">
+              Responsável direto pela <strong>captação de patrocínio com a Lokar Audiovisual</strong> durante o conceituado festival <strong>Fecart</strong>, resultando em um convite para <strong>atuação profissional na empresa por um mês</strong>, vivenciando operações de estúdio, gerenciamento de equipamentos de ponta e infraestrutura técnica audiovisual.
+            </p>
+
+            <div class="destaque-footer-meta">
+              <span>PERÍODO: <strong class="metric">1 MÊS IMERSÃO</strong></span>
+              <span>SETOR: AUDIOVISUAL PRO</span>
+            </div>
+          </article>
+
+          <!-- DESTAQUE 3: Formação Técnica & Visão Mecatrônica -->
+          <article class="destaque-card span-6">
+            <span class="corner-bracket" aria-hidden="true"></span>
+
+            <div class="destaque-badge-row">
+              <span class="pill-badge primary">ENSINO MÉDIO TÉCNICO</span>
+              <span class="pill-badge">VISÃO FUTURA</span>
+            </div>
+
+            <h3 class="destaque-title">FORMAÇÃO EM IA &amp; MECATRÔNICA</h3>
+            <p class="destaque-headline">Integração entre Algoritmos e Automação Física</p>
+
+            <p class="destaque-desc">
+              Criação de soluções que conectam modelos de inteligência artificial a sistemas físicos autônomos. A combinação entre computação avançada e engenharia mecatrônica permite antecipar demandas industriais como visão computacional, controle de atuadores e robótica preditiva.
+            </p>
+
+            <div class="destaque-footer-meta">
+              <span>STATUS: <strong class="metric">EM ANDAMENTO (1º ANO)</strong></span>
+              <span>OBJETIVO: ENGENHARIA MECATRÔNICA</span>
+            </div>
+          </article>
+
+          <!-- DESTAQUE 4: Alta Performance & Eventos Competitivos -->
+          <article class="destaque-card span-6">
+            <span class="corner-bracket" aria-hidden="true"></span>
+
+            <div class="destaque-badge-row">
+              <span class="pill-badge cyan">SOFT SKILLS &amp; DINÂMICA</span>
+              <span class="pill-badge">PROATIVIDADE</span>
+            </div>
+
+            <h3 class="destaque-title">COMPETITIVIDADE &amp; AUDÁCIA</h3>
+            <p class="destaque-headline">Excelência sob Pressão e Articulação Estratégica</p>
+
+            <p class="destaque-desc">
+              Desde festivais culturais e científicos até maratonas de programação, a capacidade de negociar com marcas reais (como na Fecart) e entregar resultados premiados (Global Game Jam) demonstra postura madura para superar metas corporativas e acadêmicas.
+            </p>
+
+            <div class="destaque-footer-meta">
+              <span>FOCO: <strong class="metric">LIDERANÇA &amp; EXECUÇÃO</strong></span>
+              <span>METODOLOGIA: ÁGIL</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         STATS COUNTER STRIP
+         ================================================================= -->
+    <section class="stats-strip" aria-label="Métricas e Indicadores">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number" data-target="1" data-prefix="" data-suffix="º ANO">1º ANO</span>
+            <span class="stat-label">Ensino Médio Técnico</span>
+            <span class="stat-sub">Inteligência Artificial</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-number" data-target="100" data-prefix="" data-suffix="%">100%</span>
+            <span class="stat-label">Dedicação Tecnológica</span>
+            <span class="stat-sub">Mecatrônica &amp; Algoritmos</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-number" data-target="3" data-prefix="" data-suffix=" ESCOLAS">3 ESCOLAS</span>
+            <span class="stat-label">Base Educacional de Elite</span>
+            <span class="stat-sub">Vital Brasil, Mendel, Exatus</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-number" data-target="1" data-prefix="" data-suffix=" MÊS">1 MÊS</span>
+            <span class="stat-label">Imersão Audiovisual Real</span>
+            <span class="stat-sub">Lokar Audiovisual / Fecart</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         SOBRE / BIOGRAFIA & TRAJETÓRIA ACADÊMICA
+         ================================================================= -->
+    <section class="sobre-section" id="sobre">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-tag">
+            <span>[ 03 // ORIGEM &amp; FUNDAÇÃO ]</span>
+          </div>
+          <h2 class="section-title">
+            SOBRE &amp; <span class="accent">BIOGRAFIA</span>
+          </h2>
+          <p class="section-desc">
+            A convergência entre formação escolar rigorosa, curiosidade por sistemas inteligentes e ação prática no mercado.
+          </p>
+        </div>
+
+        <div class="sobre-grid">
+          <!-- Bio Narrative Box -->
+          <div class="sobre-bio-card">
+            <!-- Exact Biography quote requested by user -->
+            <div class="sobre-quote-box">
+              &ldquo;Sou um estudante focado em tecnologia, com experiência prática em eventos competitivos e no setor audiovisual. Minha trajetória acadêmica inclui passagens pelo <strong>Vital Brasil</strong>, <strong>Agostiniano Mendel</strong> e <strong>Exatus</strong>.&rdquo;
+            </div>
+
+            <p class="sobre-narrative">
+              Com o objetivo fixo na <strong>Engenharia Mecatrônica</strong>, busco constantemente expandir os horizontes através de projetos práticos que combinam machine learning, sensores eletrônicos, automação física e comunicação audiovisual. Cada experiência &mdash; de hackathons a operações reais de filmagem &mdash; fortalece minha capacidade de liderar e resolver problemas complexos.
+            </p>
+
+            <!-- Academic Timeline Section -->
+            <div class="timeline-block" id="trajetoria">
+              <h3 class="timeline-heading">TRAJETÓRIA ACADÊMICA</h3>
+
+              <div class="timeline-list">
+                <!-- 01 Vital Brasil -->
+                <div class="timeline-item">
+                  <div class="timeline-tag">FORMAÇÃO INICIAL</div>
+                  <h4 class="timeline-school-name">Colégio Vital Brasil</h4>
+                  <p class="timeline-school-desc">Desenvolvimento do raciocínio analítico inicial, disciplinas de exatas e engajamento em desafios multidisciplinares.</p>
+                </div>
+
+                <!-- 02 Agostiniano Mendel -->
+                <div class="timeline-item">
+                  <div class="timeline-tag">APROFUNDAMENTO &amp; EXCELÊNCIA</div>
+                  <h4 class="timeline-school-name">Colégio Agostiniano Mendel</h4>
+                  <p class="timeline-school-desc">Consolidação de rigor acadêmico, participação em projetos colaborativos e fortalecimento de soft skills e liderança.</p>
+                </div>
+
+                <!-- 03 Exatus -->
+                <div class="timeline-item">
+                  <div class="timeline-tag">FOCO TÉCNICO &amp; PREPARAÇÃO</div>
+                  <h4 class="timeline-school-name">Colégio Exatus</h4>
+                  <p class="timeline-school-desc">Imersão em ciências exatas de alta intensidade, pensamento estratégico e direcionamento para a área de tecnologia.</p>
+                </div>
+
+                <!-- 04 Técnico em IA Atual -->
+                <div class="timeline-item active">
+                  <div class="timeline-tag">FORMAÇÃO ATUAL // 2026</div>
+                  <h4 class="timeline-school-name">Técnico em Inteligência Artificial</h4>
+                  <p class="timeline-school-desc">1º ano do Ensino Médio Técnico com ênfase em modelos neurais, visão computacional e automação mecatrônica preparatória para a faculdade.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills HUD & Technical Competencies -->
+          <div class="skills-hud-card">
+            <h3 class="hud-title">MATRIZ DE COMPETÊNCIAS // HUD</h3>
+
+            <div class="skills-category">
+              <div class="category-name">
+                <span>●</span> <span>INTELIGÊNCIA ARTIFICIAL &amp; COMPUTAÇÃO</span>
+              </div>
+              <div class="skill-tags-group">
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Python &amp; Lógica</span>
+                <span class="tech-tag">Visão Computacional</span>
+                <span class="tech-tag">Algoritmos &amp; Heurísticas</span>
+                <span class="tech-tag">Redes Neurais</span>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <div class="category-name">
+                <span>●</span> <span>MECATRÔNICA &amp; HARDWARE</span>
+              </div>
+              <div class="skill-tags-group">
+                <span class="tech-tag">Automação de Sensores</span>
+                <span class="tech-tag">Microcontroladores</span>
+                <span class="tech-tag">Robótica Básica</span>
+                <span class="tech-tag">Prototipagem Rápida</span>
+                <span class="tech-tag">Controle de Atuadores</span>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <div class="category-name">
+                <span>●</span> <span>AUDIOVISUAL &amp; PRODUÇÃO TÉCNICA</span>
+              </div>
+              <div class="skill-tags-group">
+                <span class="tech-tag">Lokar Audiovisual Ops</span>
+                <span class="tech-tag">Operação de Câmeras &amp; Iluminação</span>
+                <span class="tech-tag">Edição &amp; Pós-Produção</span>
+                <span class="tech-tag">Captação de Patrocínio</span>
+                <span class="tech-tag">Gestão Técnica de Eventos</span>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <div class="category-name">
+                <span>●</span> <span>COMPETIÇÕES &amp; GAME DEV</span>
+              </div>
+              <div class="skill-tags-group">
+                <span class="tech-tag">Global Game Jam Next</span>
+                <span class="tech-tag">Game Mechanics</span>
+                <span class="tech-tag">Level Design</span>
+                <span class="tech-tag">Trabalho sob Pressão</span>
+              </div>
+            </div>
+
+            <!-- Visual Asset Core Badge -->
+            <div class="destaque-media-box" style="margin-top: 32px; border: 1px solid var(--border-highlight);">
+              <img src="assets/cyber-core.svg" alt="Diagrama de telemetria IA & Mecatrônica" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         RODAPÉ / CONTATO
+         ================================================================= -->
+    <footer class="site-footer" id="contato">
+      <div class="container">
+        <div class="footer-top-grid">
+          <div>
+            <div class="section-tag">
+              <span>[ 04 // VAMOS CONVERSAR? ]</span>
+            </div>
+            <h2 class="footer-impact-title">
+              DISPONÍVEL PARA <br><span class="accent">NOVOS PROJETOS</span>
+            </h2>
+            <p class="footer-impact-desc">
+              Interessado em colaborar em iniciativas de Inteligência Artificial, desafios mecatrônicos, produções audiovisuais ou competições tecnológicas? Entre em contato direto.
+            </p>
+
+            <!-- Social Links Requested by User -->
+            <div class="footer-socials">
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/henrique-amaral-borges" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LINKEDIN // HENRIQUE
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/henriqueamaralborges-dotcom" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GITHUB // HENRIQUE
+              </a>
+
+              <!-- Email Direct Mailto -->
+              <a href="mailto:henriqueamaralborges@gmail.com" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                ENVIAR E-MAIL DIRETO
+              </a>
+            </div>
+
+            <!-- Quick Copy Interactive Box -->
+            <div class="email-copy-box" id="copyEmailBtn" title="Clique para copiar o e-mail">
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-cyan); margin-bottom: 2px;">CANAL DIRETO // CLIQUE PARA COPIAR</div>
+                <div class="email-copy-text" id="emailValue">henriqueamaralborges@gmail.com</div>
+              </div>
+              <span class="copy-badge">COPIAR 📋</span>
+            </div>
+          </div>
+
+          <!-- Side Brand & Architecture Notes -->
+          <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="background: #0E0E14; border: 1px solid var(--border-subtle); padding: 24px; border-radius: var(--radius-md);">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-primary); margin-bottom: 8px;">
+                // DESIGN SYSTEM &amp; ENGENHARIA
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+                Interface estruturada com base no design system dinâmico de <strong>landonorris.com</strong> (OFF+BRAND), adaptada com paleta neon lime (<code>#D2FF00</code>), malha em grid assimétrico, microinterações sonoras e simulação em canvas 3D.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            <span>&copy; 2026 HENRIQUE AMARAL BORGES. TODOS OS DIREITOS RESERVADOS.</span>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);">
+            SÃO PAULO &bull; BR &bull; LATÊNCIA: 12ms &bull; VERSÃO 1.0
+          </div>
+
+          <a href="#hero" class="back-to-top-btn">
+            VOLTAR AO TOPO &uarr;
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Interactive Toast Notification -->
+  <div class="toast-notice" id="toastNotice" role="alert" aria-live="polite">
+    E-MAIL COPIADO COM SUCESSO!
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

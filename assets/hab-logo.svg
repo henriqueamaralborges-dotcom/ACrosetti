@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none" class="brand-logo-svg">
+  <!-- Dynamic geometric cut background plate -->
+  <polygon points="12,4 236,4 224,66 0,66" fill="#151518" stroke="#252528" stroke-width="1.5"/>
+  <polygon points="14,6 234,6 230,10 18,10" fill="#D2FF00" opacity="0.9"/>
+  
+  <!-- Geometric Slanted Monogram HAB -->
+  <g transform="skewX(-14) translate(30, 8)">
+    <!-- H -->
+    <path d="M12 12 H20 V25 H34 V12 H42 V50 H34 V33 H20 V50 H12 Z" fill="#FFFFFF"/>
+    
+    <!-- Accent slash -->
+    <polygon points="46,12 50,12 43,50 39,50" fill="#D2FF00" opacity="0.6"/>
+    
+    <!-- A -->
+    <path d="M54 50 L66 12 H78 L90 50 H81 L78 40 H66 L63 50 H54 Z M68 33 H76 L72 20 Z" fill="#D2FF00"/>
+    
+    <!-- B -->
+    <path d="M96 12 H114 C123 12 128 16 128 22 C128 26 125 29 120 30 C126 31 130 35 130 40 C130 46 124 50 115 50 H96 V12 Z M104 20 V27 H113 C117 27 120 25 120 23.5 C120 22 117 20 113 20 H104 Z M104 35 V43 H114 C118 43 121 41 121 39 C121 37 118 35 114 35 H104 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Technical Tag // HAB 01 -->
+  <g transform="translate(162, 28)">
+    <rect x="0" y="0" width="60" height="20" rx="3" fill="#D2FF00" fill-opacity="0.1" stroke="#D2FF00" stroke-width="1"/>
+    <text x="30" y="14" font-family="'Space Grotesk', 'Courier New', monospace" font-size="10" font-weight="800" fill="#D2FF00" text-anchor="middle" letter-spacing="1.5">HAB // 01</text>
+  </g>
+
+  <!-- Cyber racing line accents -->
+  <circle cx="10" cy="35" r="3" fill="#D2FF00"/>
+  <line x1="2" y1="52" x2="16" y2="52" stroke="#D2FF00" stroke-width="2"/>
+</svg>

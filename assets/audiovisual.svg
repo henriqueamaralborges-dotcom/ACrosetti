@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <radialGradient id="avGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#D2FF00" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0E0E11" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotGridAv" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2E2E38"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#111115"/>
+  <rect width="600" height="400" fill="url(#dotGridAv)" opacity="0.5"/>
+  <circle cx="300" cy="200" r="190" fill="url(#avGlow)"/>
+
+  <!-- Geometric Frame -->
+  <polygon points="40,30 560,30 580,350 40,370" fill="#16161C" stroke="#282832" stroke-width="1.5"/>
+  <polygon points="40,30 200,30 180,50 40,50" fill="#00F0FF"/>
+  <text x="50" y="44" fill="#0E0E11" font-family="'Space Grotesk', monospace" font-size="11" font-weight="900" letter-spacing="1">AUDIOVISUAL // PATROCÍNIO</text>
+
+  <!-- Cinema Rig / Camera Lens Geometric Wireframe -->
+  <g transform="translate(300, 195)">
+    <!-- Lens outer rings -->
+    <circle cx="0" cy="0" r="110" stroke="#2E303C" stroke-width="3"/>
+    <circle cx="0" cy="0" r="95" stroke="#D2FF00" stroke-width="2" stroke-dasharray="14 6"/>
+    <circle cx="0" cy="0" r="75" stroke="#00F0FF" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="50" fill="#14151B" stroke="#D2FF00" stroke-width="1.5"/>
+    
+    <!-- Aperture Blades -->
+    <polygon points="0,-40 35,-15 25,25 -15,35 -40,0" fill="#1A1C24" stroke="#00F0FF" stroke-width="1"/>
+    <circle cx="0" cy="0" r="14" fill="#D2FF00"/>
+
+    <!-- Professional Matte Box Frame -->
+    <rect x="-140" y="-85" width="280" height="170" rx="6" fill="none" stroke="#3A3D4D" stroke-width="2"/>
+    <rect x="-145" y="-90" width="20" height="20" fill="none" stroke="#D2FF00" stroke-width="2"/>
+    <rect x="125" y="-90" width="20" height="20" fill="none" stroke="#D2FF00" stroke-width="2"/>
+    <rect x="-145" y="70" width="20" height="20" fill="none" stroke="#D2FF00" stroke-width="2"/>
+    <rect x="125" y="70" width="20" height="20" fill="none" stroke="#D2FF00" stroke-width="2"/>
+
+    <!-- REC indicator -->
+    <circle cx="-110" cy="-65" r="5" fill="#FF334B"/>
+    <text x="-98" y="-61" fill="#FFFFFF" font-family="'Space Grotesk', monospace" font-size="10" font-weight="800">REC ● 4K 60FPS</text>
+  </g>
+
+  <!-- High-tech tags -->
+  <g transform="translate(60, 310)">
+    <rect x="0" y="0" width="160" height="26" rx="3" fill="#D2FF00" fill-opacity="0.1" stroke="#D2FF00" stroke-width="1"/>
+    <text x="80" y="17" fill="#D2FF00" font-family="'Space Grotesk', monospace" font-size="10" font-weight="700" text-anchor="middle">LOKAR AUDIOVISUAL</text>
+  </g>
+
+  <g transform="translate(235, 310)">
+    <rect x="0" y="0" width="130" height="26" rx="3" fill="#00F0FF" fill-opacity="0.1" stroke="#00F0FF" stroke-width="1"/>
+    <text x="65" y="17" fill="#00F0FF" font-family="'Space Grotesk', monospace" font-size="10" font-weight="700" text-anchor="middle">FECART FESTIVAL</text>
+  </g>
+
+  <text x="540" y="330" fill="#71717A" font-family="'Space Grotesk', monospace" font-size="11" text-anchor="end">DURAÇÃO: 1 MÊS IMERSÃO</text>
+</svg>
