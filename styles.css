@@ -1146,6 +1146,32 @@ button {
   transform: rotate(6deg) scale(1.06);
 }
 
+.ggj-brand-logo-container {
+  background: #5016A6;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  width: 95px;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(80, 22, 166, 0.5);
+  transition: transform var(--trans-smooth);
+}
+
+.destaque-card:hover .ggj-brand-logo-container {
+  transform: rotate(-4deg) scale(1.06);
+}
+
+.ggj-brand-logo {
+  max-height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 /* Institutional Partners Strip */
 .partners-strip {
   padding: 50px 0;
@@ -1181,7 +1207,7 @@ button {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
