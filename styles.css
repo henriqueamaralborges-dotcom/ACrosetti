@@ -38,7 +38,7 @@
 
 /* Base Adjustments */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
   background-color: var(--color--black, #111112);
   color: var(--color--white, #f4f4ed);
   font-family: var(--font-body);
@@ -2104,4 +2104,134 @@ body {
 .hero-view-panel.active {
   opacity: 1;
   transform: scale(1);
+}
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLL & SCROLL MOTION FX (landonorris.com)
+   ========================================================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Top Scroll Progress Laser Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 10001;
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-cyan, #00F0FF), var(--color--lime, #d2ff00));
+  box-shadow: 0 0 14px var(--color--lime, #d2ff00), 0 0 25px var(--color--lime, #d2ff00);
+  transition: width 0.05s ease-out;
+}
+
+/* Formula 1 Cockpit Scroll Telemetry HUD (Speedometer) */
+.scroll-telemetry-hud {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998;
+  background: rgba(17, 17, 18, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-right: 3px solid var(--color--lime);
+  border-radius: 0.54rem;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(210, 255, 0, 0.08);
+  font-family: var(--font-mono);
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.speed-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.speed-label {
+  font-size: 0.62rem;
+  color: var(--color--grey-on-track);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.speed-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.speed-number {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color--lime);
+  line-height: 1;
+}
+
+.speed-unit {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color--white);
+  letter-spacing: 1px;
+}
+
+.speed-rpm-bar {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.rpm-segment {
+  width: 4px;
+  height: 14px;
+  background: rgba(244, 244, 237, 0.15);
+  border-radius: 1px;
+  transition: background 0.08s ease;
+}
+
+.rpm-segment.active.green {
+  background: var(--color--lime);
+  box-shadow: 0 0 8px var(--color--lime);
+}
+
+.rpm-segment.active.red {
+  background: var(--color-red, #FF334B);
+  box-shadow: 0 0 10px var(--color-red, #FF334B);
+}
+
+/* Scroll Parallax on Images */
+.parallax-img {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Card focus illumination on scroll */
+.destaque-card.scroll-active {
+  border-color: rgba(210, 255, 0, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(210, 255, 0, 0.2);
 }
