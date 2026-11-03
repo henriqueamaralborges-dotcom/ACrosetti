@@ -1,49 +1,85 @@
 /* ==========================================================================
-   HENRIQUE AMARAL BORGES — DESIGN SYSTEM
-   Inspirado na arquitetura e identidade visual de landonorris.com (OFF+BRAND)
+   HENRIQUE AMARAL BORGES — OFFICIAL DESIGN SYSTEM
+   Baseado fielmente na arquitetura visual e tokens de landonorris.com (OFF+BRAND)
    ========================================================================== */
 
-/* --- GOOGLE FONTS IMPORT --- */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap');
+/* --- GOOGLE FONTS IMPORT (Mona Sans, Space Grotesk, Syne, JetBrains Mono) --- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap');
 
-/* --- DESIGN TOKENS --- */
+/* --- DESIGN TOKENS (Extraídos diretamente do site oficial landonorris.com) --- */
 :root {
-  /* Palette */
-  --color-primary: #D2FF00;          /* Electric Neon Lime / LN4 Signature Yellow */
-  --color-primary-glow: rgba(210, 255, 0, 0.4);
-  --color-primary-dim: rgba(210, 255, 0, 0.12);
-  --color-cyan: #00F0FF;             /* Cyber Cyan Accent */
-  --color-cyan-glow: rgba(0, 240, 255, 0.35);
-  --color-red: #FF334B;              /* Speed / Alert Red */
+  /* Core Brand Colors */
+  --color--black: #111112;           /* Deep Matte Obsidian Charcoal */
+  --color--lime: #d2ff00;            /* LN4 High Voltage Electric Neon Lime */
+  --color--lime-off: #b2c73a;        /* Muted Lime Accent */
+  --color--lime-glow: rgba(210, 255, 0, 0.45);
+  --color--lime-dim: rgba(210, 255, 0, 0.12);
+  --color--lime-zero: rgba(210, 255, 0, 0);
 
-  /* Neutral & Dark Carbon Canvas */
-  --bg-deep: #08080A;                /* Deep Canvas Black */
-  --bg-carbon: #0E0E12;              /* Primary Surface */
-  --bg-surface: #14141A;             /* Elevated Card / Panel */
-  --bg-surface-hover: #1A1A22;       /* Interactive Hover State */
-  --border-subtle: #24242E;          /* Standard structural border */
-  --border-highlight: rgba(210, 255, 0, 0.35);
+  /* Editorial Warm Neutrals */
+  --color--white: #f4f4ed;           /* Signature Warm Off-White */
+  --color--cream: #efefe5;           /* Cream Surface Tone */
+  --color--green-off-white-1: #dde1d2;
+  --color--green-off-white-2: #b4b8a5;
+  --color--grey-1: #ebeee0;
+  --color--grey-2: #c8cbbd;
+  --color--grey-on-track: #b9bbad;   /* Technical Telemetry Label Grey */
 
-  /* Typography Colors */
-  --text-white: #FFFFFF;
-  --text-light: #E4E4E7;
-  --text-muted: #8E8E9F;
-  --text-dim: #555566;
+  /* Dark Olive Racing Shades (Text on Lime buttons) */
+  --color--dark-green: #282c20;      /* Dark Racing Olive Green (Text on Lime) */
+  --color--dark-green-tint-1: #3b3c38;
+  --color--dark-green-tint-2: #535450;
+
+  /* High Performance Accent Colors */
+  --color--orange: #ff6b00;          /* McLaren Papaya Speed Accent */
+  --color--cyan: #00F0FF;            /* Mechatronics / Neural Telemetry Cyan */
+  --color--cyan-glow: rgba(0, 240, 255, 0.35);
+  --color--red: #FF334B;             /* Alert & Recording Status Red */
+
+  /* Surface & Canvas System */
+  --bg-deep: #111112;                /* Deep Canvas Black */
+  --bg-carbon: #161619;              /* Primary Dark Surface */
+  --bg-surface: #1b1b20;             /* Elevated Bento Panel */
+  --bg-surface-hover: #222228;       /* Interactive Hover Surface */
+
+  /* Structural Borders */
+  --border-subtle: rgba(244, 244, 237, 0.1);    /* Delicate Warm Hairline Border */
+  --border-highlight: rgba(210, 255, 0, 0.35); /* Neon Lime Focus Border */
+  --border-active: #d2ff00;
 
   /* Typography Families */
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Mona Sans', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Mona Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Layout Spacing */
-  --container-max: 1380px;
+  /* Typography Scales from landonorris.com */
+  --text--impact: clamp(3.8rem, 8.5vw, 7.8rem);
+  --text--h1: clamp(2.8rem, 6vw, 4.5rem);
+  --text--h2: clamp(2.2rem, 4.5vw, 3.5rem);
+  --text--h3: clamp(1.4rem, 2.8vw, 2rem);
+  --text--h4: 1.5rem;
+  --text--h5: 1.2rem;
+  --text--h6: 1rem;
+  --text--reg: 1.05rem;
+  --text--btn-primary: 0.875rem;
+  --text--btn-nav: 0.8125rem;
+  --text--eyebrow: 0.6875rem;
+
+  /* Paddings, Radii & Spacing from landonorris.com */
+  --gap: 1.25rem;
+  --padding--container: 1.5rem;
+  --container-max: 1400px;
   --section-padding: 120px 24px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 14px;
-  
-  /* Transitions */
-  --trans-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius--small: 0.54rem;          /* Exact Lando button radius */
+  --radius--med: 1.5rem;            /* Bento card radius */
+  --radius--large: 3rem;
+  --radius--pill: 9999px;
+
+  /* Motion Curves from landonorris.com */
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
+  --duration-default: 0.75s;
+  --animation-default: var(--duration-default) var(--cubic-default);
+  --trans-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   --trans-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -57,43 +93,51 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-deep);
-  color: var(--text-light);
+  color: var(--color--white);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--bg-deep);
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(210, 255, 0, 0.07) 0%, transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    radial-gradient(circle at 50% 0%, rgba(210, 255, 0, 0.08) 0%, transparent 60%),
+    linear-gradient(rgba(244, 244, 237, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 244, 237, 0.02) 1px, transparent 1px);
   background-size: 100% 100%, 48px 48px, 48px 48px;
+  color: var(--color--white);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* Selection */
+/* Selection (Extraído de landonorris.com) */
 ::selection {
-  background-color: var(--color-primary);
-  color: #000000;
+  background-color: var(--color--lime);
+  color: var(--color--black);
+  text-shadow: none;
+}
+::-moz-selection {
+  background-color: var(--color--lime);
+  color: var(--color--black);
+  text-shadow: none;
 }
 
 /* Interactive Cursor Glow */
 .cursor-glow {
   position: fixed;
-  width: 450px;
-  height: 450px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(210, 255, 0, 0.06) 0%, rgba(0, 240, 255, 0.02) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(210, 255, 0, 0.07) 0%, rgba(0, 240, 255, 0.02) 45%, transparent 70%);
   transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: transform 0.05s ease-out;
+  transition: transform 0.06s ease-out;
   display: none;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -105,7 +149,7 @@ body {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--padding--container);
 }
 
 /* Links & Buttons base */
@@ -122,25 +166,28 @@ button {
   background: none;
 }
 
-/* --- NAVIGATION / TOP BAR --- */
+/* ==========================================================================
+   NAVIGATION HEADER (Estilo Flutuante landonorris.com)
+   ========================================================================== */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 1.25rem 0;
   transition: background-color var(--trans-smooth), border-color var(--trans-smooth), padding var(--trans-smooth);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(17, 17, 18, 0.75);
 }
 
 .site-header.scrolled {
-  padding: 12px 0;
-  background-color: rgba(8, 8, 10, 0.88);
-  border-bottom-color: var(--border-subtle);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 0.85rem 0;
+  background: rgba(17, 17, 18, 0.94);
+  border-bottom-color: rgba(244, 244, 237, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .header-inner {
@@ -162,17 +209,18 @@ button {
 }
 
 .brand-link:hover .brand-logo-img {
-  transform: scale(1.04) skewX(-2deg);
+  transform: scale(1.05) skewX(-2deg);
 }
 
 .brand-badge {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
   letter-spacing: 1.5px;
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-dim);
-  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: var(--radius--pill);
+  background: var(--color--lime-dim);
+  color: var(--color--lime);
   border: 1px solid var(--border-highlight);
   text-transform: uppercase;
 }
@@ -180,22 +228,23 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: var(--text--btn-nav);
   letter-spacing: 1.5px;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
   padding: 6px 0;
+  transition: color var(--trans-smooth);
 }
 
 .nav-link span {
-  color: var(--color-primary);
+  color: var(--color--lime);
   margin-right: 4px;
 }
 
@@ -206,12 +255,12 @@ button {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--color-primary);
+  background: var(--color--lime);
   transition: width var(--trans-smooth);
 }
 
 .nav-link:hover {
-  color: var(--text-white);
+  color: var(--color--white);
 }
 
 .nav-link:hover::after {
@@ -221,7 +270,7 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .live-telemetry {
@@ -229,36 +278,40 @@ button {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  background: #111116;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color--green-off-white-1);
+  background: rgba(244, 244, 237, 0.04);
   border: 1px solid var(--border-subtle);
-  padding: 6px 12px;
-  border-radius: 99px;
+  padding: 6px 14px;
+  border-radius: var(--radius--pill);
 }
 
 .live-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--color-primary);
-  box-shadow: 0 0 10px var(--color-primary);
+  background: var(--color--lime);
+  box-shadow: 0 0 10px var(--color--lime);
   animation: pulseDot 2s infinite ease-in-out;
 }
 
 @keyframes pulseDot {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.35; transform: scale(0.8); }
 }
 
 .audio-toggle-btn {
-  background: #14141B;
+  background: rgba(244, 244, 237, 0.04);
   border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  padding: 6px 12px;
-  border-radius: 99px;
+  color: var(--color--grey-on-track);
+  padding: 6px 14px;
+  border-radius: var(--radius--pill);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -266,78 +319,122 @@ button {
 }
 
 .audio-toggle-btn:hover, .audio-toggle-btn.active {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  background: var(--color-primary-dim);
+  color: var(--color--lime);
+  border-color: var(--color--lime);
+  background: var(--color--lime-dim);
 }
 
 .mobile-menu-btn {
   display: none;
   background: none;
   border: 1px solid var(--border-subtle);
-  color: var(--text-white);
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
+  color: var(--color--white);
+  padding: 8px 14px;
+  border-radius: var(--radius--small);
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
-/* --- BUTTONS & PILLS (High-Tech Motorsport Style) --- */
+/* ==========================================================================
+   BUTTONS & PILLS (Fiel à Especificação .btn-w de landonorris.com)
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: var(--text--btn-primary);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 14px 28px;
-  border-radius: 2px;
+  letter-spacing: 0.04em;
+  height: 3rem;                      /* 48px como no landonorris.com */
+  padding: 0 1.5rem;
+  border-radius: var(--radius--small); /* 0.54rem */
   position: relative;
-  transition: all var(--trans-smooth);
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  transition: all 0.35s var(--cubic-default);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
+/* Primary Button: Lime Background + Dark Olive Racing Green Text */
 .btn-primary {
-  background: var(--color-primary);
-  color: #000000;
-  box-shadow: 0 0 24px rgba(210, 255, 0, 0.28);
+  background-color: var(--color--lime);
+  color: var(--color--dark-green);    /* Cor característica oficial de landonorris.com */
+  border: 1px solid var(--color--lime);
+  box-shadow: 0 0 20px rgba(210, 255, 0, 0.25);
 }
 
 .btn-primary:hover {
-  background: #E4FF4D;
-  box-shadow: 0 0 35px rgba(210, 255, 0, 0.55);
+  background-color: var(--color--white);
+  border-color: var(--color--white);
+  color: var(--color--black);
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(210, 255, 0, 0.35);
 }
 
+/* Secondary Button: Clean Hairline Outline */
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-white);
-  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  color: var(--color--white);
+  border: 1px solid rgba(244, 244, 237, 0.22);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--color--lime);
+  color: var(--color--lime);
+  background-color: rgba(210, 255, 0, 0.08);
   transform: translateY(-2px);
 }
 
+/* Ghost / WhatsApp Button */
 .btn-ghost {
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--border-highlight);
+  background-color: transparent;
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.5);
 }
 
 .btn-ghost:hover {
-  background: var(--color-primary-dim);
-  border-color: var(--color-primary);
-  box-shadow: 0 0 20px var(--color-primary-glow);
+  background-color: rgba(37, 211, 102, 0.12);
+  border-color: #25D366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+  transform: translateY(-2px);
 }
 
-/* --- HERO / CABEÇALHO DE IMPACTO --- */
+/* Pill Badges */
+.pill-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius--pill);
+  background: rgba(244, 244, 237, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--color--green-off-white-1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pill-badge.primary {
+  background: var(--color--lime);
+  color: var(--color--dark-green);
+  border-color: var(--color--lime);
+  font-weight: 800;
+}
+
+.pill-badge.cyan {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.35);
+  color: var(--color--cyan);
+}
+
+/* ==========================================================================
+   HERO SECTION / CABEÇALHO DE IMPACTO MONUMENTAL
+   ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -352,10 +449,10 @@ button {
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 500px;
-  background: radial-gradient(ellipse at center, rgba(210, 255, 0, 0.12) 0%, rgba(0, 240, 255, 0.04) 40%, transparent 75%);
-  filter: blur(80px);
+  width: 950px;
+  height: 520px;
+  background: radial-gradient(ellipse at center, rgba(210, 255, 0, 0.11) 0%, rgba(0, 240, 255, 0.03) 45%, transparent 75%);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
 }
@@ -377,32 +474,33 @@ button {
 .hero-tag-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: var(--text--eyebrow);
   letter-spacing: 2px;
-  color: var(--color-primary);
-  background: #111116;
+  color: var(--color--lime);
+  background: rgba(244, 244, 237, 0.04);
   border: 1px solid var(--border-highlight);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  border-radius: var(--radius--pill);
   width: fit-content;
   margin-bottom: 24px;
 }
 
 .hero-tag-badge .bracket {
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
 }
 
-/* Hero Huge Impact Heading */
+/* Hero Giant Display Title (Mona Sans Impact com Staggered Lines) */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+  font-variation-settings: "wght" 850, "wdth" 93;
+  font-size: var(--text--impact);
   font-weight: 900;
-  line-height: 0.92;
+  line-height: 0.88;
   text-transform: uppercase;
-  color: var(--text-white);
-  letter-spacing: -2px;
+  color: var(--color--white);
+  letter-spacing: -0.04em;
   margin-bottom: 24px;
 }
 
@@ -412,34 +510,34 @@ button {
 }
 
 .hero-title .title-line.accent {
-  color: var(--color-primary);
-  text-shadow: 0 0 40px rgba(210, 255, 0, 0.45);
+  color: var(--color--lime);
+  text-shadow: 0 0 35px rgba(210, 255, 0, 0.45);
 }
 
 .hero-title .title-line.outline {
-  -webkit-text-stroke: 1.5px var(--text-white);
+  -webkit-text-stroke: 1.5px var(--color--white);
   color: transparent;
 }
 
-/* Subtítulo / Atuação */
+/* Subtitle / Role Badge Box */
 .hero-subtitle-box {
-  background: rgba(18, 18, 24, 0.75);
-  backdrop-filter: blur(12px);
-  border-left: 3px solid var(--color-primary);
+  background: rgba(22, 22, 25, 0.85);
+  backdrop-filter: blur(14px);
+  border-left: 3px solid var(--color--lime);
   border-top: 1px solid var(--border-subtle);
   border-right: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   padding: 18px 24px;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: 0 var(--radius--med) var(--radius--med) 0;
   margin-bottom: 32px;
-  max-width: 650px;
+  max-width: 660px;
 }
 
 .hero-role-label {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: var(--text--eyebrow);
   letter-spacing: 2px;
-  color: var(--color-cyan);
+  color: var(--color--cyan);
   text-transform: uppercase;
   margin-bottom: 6px;
   display: flex;
@@ -450,16 +548,17 @@ button {
 .hero-role-text {
   font-family: var(--font-body);
   font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-white);
+  font-weight: 500;
+  color: var(--color--white);
   line-height: 1.45;
 }
 
 .hero-role-text strong {
-  color: var(--color-primary);
+  color: var(--color--lime);
+  font-weight: 700;
 }
 
-/* Telemetry quick status */
+/* Telemetry quick status HUD */
 .hero-telemetry-row {
   display: flex;
   flex-wrap: wrap;
@@ -472,15 +571,20 @@ button {
   flex-direction: column;
   background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  border-radius: var(--radius--small);
   min-width: 140px;
+  transition: border-color var(--trans-smooth);
+}
+
+.telemetry-item:hover {
+  border-color: var(--border-highlight);
 }
 
 .telemetry-item .label {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-muted);
+  font-size: 0.65rem;
+  color: var(--color--grey-on-track);
   letter-spacing: 1px;
 }
 
@@ -488,23 +592,24 @@ button {
   font-family: var(--font-mono);
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
-/* Hero CTA Row */
 .hero-cta-group {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-/* Hero Visual / Interactive 3D Canvas Container */
+/* ==========================================================================
+   HERO VISUAL CARD (Segmented Capsule Switcher inspirado em On/Off Track)
+   ========================================================================== */
 .hero-visual-card {
   position: relative;
-  background: var(--bg-surface);
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius--med);
   padding: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
   overflow: hidden;
@@ -517,7 +622,7 @@ button {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  background: linear-gradient(90deg, transparent, var(--color--lime), transparent);
 }
 
 .hero-visual-header {
@@ -528,7 +633,7 @@ button {
   border-bottom: 1px solid var(--border-subtle);
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -539,36 +644,49 @@ button {
   align-items: center;
 }
 
+.hud-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.hud-dot.red { background: var(--color--red); }
+.hud-dot.yellow { background: var(--color--lime); }
+.hud-dot.cyan { background: var(--color--cyan); }
+
+/* Capsule Segmented Switcher (Estilo On-Track / Off-Track de landonorris.com) */
 .hero-tab-switcher {
-  display: flex;
-  gap: 6px;
-  background: #0B0B0F;
+  display: inline-flex;
+  background: rgba(244, 244, 237, 0.05);
+  border: 1px solid rgba(244, 244, 237, 0.12);
+  border-radius: var(--radius--pill);
   padding: 3px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  gap: 4px;
 }
 
 .hero-tab-btn {
   background: transparent;
   border: none;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 2px;
+  letter-spacing: 0.06em;
+  padding: 5px 14px;
+  border-radius: var(--radius--pill);
   cursor: pointer;
-  transition: all var(--trans-fast);
+  transition: all 0.3s var(--cubic-default);
 }
 
 .hero-tab-btn:hover {
-  color: var(--text-white);
+  color: var(--color--white);
 }
 
 .hero-tab-btn.active {
-  background: var(--color-primary);
-  color: #000000;
-  box-shadow: 0 0 12px var(--color-primary-glow);
+  background: var(--color--lime);
+  color: var(--color--dark-green);
+  font-weight: 800;
+  box-shadow: 0 0 16px rgba(210, 255, 0, 0.4);
 }
 
 .hero-view-panel {
@@ -585,8 +703,8 @@ button {
   width: 100%;
   aspect-ratio: 4 / 3;
   min-height: 380px;
-  background: #0A0A0E;
-  border-radius: var(--radius-md);
+  background: #0E0E11;
+  border-radius: calc(var(--radius--med) - 6px);
   overflow: hidden;
 }
 
@@ -595,14 +713,13 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  filter: contrast(1.06) brightness(1.02) saturate(1.05);
+  filter: contrast(1.06) brightness(1.02);
   transition: transform var(--trans-smooth), filter var(--trans-smooth);
   display: block;
 }
 
 .hero-portrait-wrapper:hover .hero-portrait-img {
   transform: scale(1.03);
-  filter: contrast(1.1) brightness(1.04) saturate(1.08);
 }
 
 .hero-portrait-overlay {
@@ -610,7 +727,7 @@ button {
   inset: 0;
   pointer-events: none;
   background: 
-    linear-gradient(180deg, rgba(10, 10, 14, 0.1) 0%, rgba(10, 10, 14, 0.15) 50%, rgba(10, 10, 14, 0.95) 100%),
+    linear-gradient(180deg, rgba(17, 17, 18, 0.1) 0%, rgba(17, 17, 18, 0.15) 50%, rgba(17, 17, 18, 0.95) 100%),
     linear-gradient(rgba(210, 255, 0, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(210, 255, 0, 0.03) 1px, transparent 1px);
   background-size: 100% 100%, 24px 24px, 24px 24px;
@@ -627,25 +744,25 @@ button {
 }
 
 .hero-name-badge {
-  background: rgba(14, 14, 20, 0.9);
+  background: rgba(17, 17, 18, 0.9);
   border: 1px solid var(--border-highlight);
   padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  backdrop-filter: blur(8px);
+  border-radius: var(--radius--small);
+  backdrop-filter: blur(10px);
 }
 
 .hero-name-badge .name {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 900;
-  color: var(--text-white);
+  color: var(--color--white);
   letter-spacing: 0.5px;
 }
 
 .hero-name-badge .sub {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-primary);
+  font-size: 0.6875rem;
+  color: var(--color--lime);
   font-weight: 700;
 }
 
@@ -654,7 +771,7 @@ button {
   position: relative;
   width: 100%;
   height: 250px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius--small);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   background: #0E0E12;
@@ -680,10 +797,10 @@ button {
   bottom: 12px;
   left: 12px;
   right: 12px;
-  background: rgba(14, 14, 20, 0.9);
-  backdrop-filter: blur(8px);
+  background: rgba(17, 17, 18, 0.9);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border-highlight);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   padding: 8px 14px;
   display: flex;
   align-items: center;
@@ -697,8 +814,8 @@ button {
   width: 100%;
   aspect-ratio: 4 / 3;
   min-height: 380px;
-  background: #0A0A0E;
-  border-radius: var(--radius-md);
+  background: #0E0E11;
+  border-radius: calc(var(--radius--med) - 6px);
   overflow: hidden;
 }
 
@@ -715,8 +832,8 @@ button {
   inset: 0;
   pointer-events: none;
   background: 
-    linear-gradient(rgba(210, 255, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(210, 255, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(210, 255, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 255, 0, 0.04) 1px, transparent 1px);
   background-size: 24px 24px;
   display: flex;
   flex-direction: column;
@@ -727,11 +844,11 @@ button {
 .overlay-corner {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--color-primary);
-  background: rgba(14, 14, 18, 0.8);
-  padding: 4px 8px;
+  color: var(--color--lime);
+  background: rgba(17, 17, 18, 0.85);
+  padding: 4px 10px;
   border: 1px solid var(--border-highlight);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--pill);
 }
 
 .hero-visual-footer {
@@ -741,32 +858,34 @@ button {
   margin-top: 12px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   padding: 0 6px;
 }
 
 .hero-visual-footer .hint {
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
-/* --- INFINITE MARQUEE TICKER (Lando Norris Signature Style) --- */
+/* ==========================================================================
+   INFINITE MARQUEE TICKER (Lando Norris Signature Velocity)
+   ========================================================================== */
 .marquee-ticker-section {
   position: relative;
-  background: #0C0C10;
+  background: #0E0E11;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
-  padding: 18px 0;
+  padding: 20px 0;
   user-select: none;
   transform: rotate(-0.5deg);
-  margin: 20px -20px;
+  margin: 30px -20px;
 }
 
 .marquee-track {
   display: flex;
   white-space: nowrap;
   gap: 32px;
-  animation: marqueeScroll 28s linear infinite;
+  animation: marqueeScroll 26s linear infinite;
   width: max-content;
 }
 
@@ -784,25 +903,28 @@ button {
   align-items: center;
   gap: 24px;
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-variation-settings: "wght" 800, "wdth" 93;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--color--white);
 }
 
 .marquee-item .highlight {
-  color: var(--color-primary);
-  text-shadow: 0 0 15px rgba(210, 255, 0, 0.4);
+  color: var(--color--lime);
+  text-shadow: 0 0 18px rgba(210, 255, 0, 0.4);
 }
 
 .marquee-item .separator {
-  color: var(--color-cyan);
+  color: var(--color--grey-on-track);
   font-family: var(--font-mono);
   font-size: 1.1rem;
 }
 
-/* --- SECTION HEADERS --- */
+/* ==========================================================================
+   SECTION HEADERS (Estilo Editorial OFF+BRAND)
+   ========================================================================== */
 .section-header-block {
   margin-bottom: 60px;
 }
@@ -812,35 +934,39 @@ button {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: var(--text--eyebrow);
   letter-spacing: 2px;
-  color: var(--color-primary);
+  color: var(--color--lime);
   text-transform: uppercase;
   margin-bottom: 14px;
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-variation-settings: "wght" 850, "wdth" 93;
+  font-size: var(--text--h1);
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--text-white);
-  line-height: 1.05;
-  letter-spacing: -1px;
+  color: var(--color--white);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
 .section-title span.accent {
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
 .section-desc {
   max-width: 680px;
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
+  line-height: 1.6;
 }
 
-/* --- GRID DE DESTAQUES & CONQUISTAS --- */
+/* ==========================================================================
+   BENTO GRID DE DESTAQUES & CONQUISTAS
+   ========================================================================== */
 .destaques-section {
   padding: var(--section-padding);
   position: relative;
@@ -852,41 +978,28 @@ button {
   gap: 28px;
 }
 
-/* Featured Card Standard Styling */
 .destaque-card {
-  background: var(--bg-surface);
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius--med);
   padding: 32px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all var(--trans-smooth);
+  transition: all 0.4s var(--cubic-default);
 }
 
 .destaque-card:hover {
   transform: translateY(-6px);
-  border-color: var(--color-primary);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(210, 255, 0, 0.15);
+  border-color: rgba(210, 255, 0, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(210, 255, 0, 0.12);
 }
 
-/* Asymmetric Bento Span */
-.destaque-card.span-7 {
-  grid-column: span 7;
-}
-
-.destaque-card.span-5 {
-  grid-column: span 5;
-}
-
-.destaque-card.span-6 {
-  grid-column: span 6;
-}
-
-.destaque-card.span-12 {
-  grid-column: span 12;
-}
+.destaque-card.span-7 { grid-column: span 7; }
+.destaque-card.span-5 { grid-column: span 5; }
+.destaque-card.span-6 { grid-column: span 6; }
+.destaque-card.span-12 { grid-column: span 12; }
 
 .destaque-badge-row {
   display: flex;
@@ -896,37 +1009,12 @@ button {
   margin-bottom: 20px;
 }
 
-.pill-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  background: #111116;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-}
-
-.pill-badge.primary {
-  background: var(--color-primary-dim);
-  border-color: var(--border-highlight);
-  color: var(--color-primary);
-}
-
-.pill-badge.cyan {
-  background: rgba(0, 240, 255, 0.1);
-  border-color: rgba(0, 240, 255, 0.3);
-  color: var(--color-cyan);
-}
-
 .destaque-title {
   font-family: var(--font-display);
   font-size: 1.85rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--text-white);
+  color: var(--color--white);
   line-height: 1.2;
   margin-bottom: 12px;
 }
@@ -935,13 +1023,13 @@ button {
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color--lime);
   margin-bottom: 14px;
 }
 
 .destaque-desc {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--color--green-off-white-1);
   line-height: 1.6;
   margin-bottom: 24px;
   flex-grow: 1;
@@ -949,7 +1037,7 @@ button {
 
 .destaque-media-box {
   width: 100%;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius--small);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   background: #0E0E12;
@@ -976,23 +1064,23 @@ button {
   border-top: 1px solid var(--border-subtle);
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
 }
 
 .destaque-footer-meta .metric {
-  color: var(--color-primary);
+  color: var(--color--lime);
   font-weight: 700;
 }
 
 /* Corner neon accent bracket on cards */
 .corner-bracket {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   width: 16px;
   height: 16px;
-  border-top: 2px solid var(--color-primary);
-  border-right: 2px solid var(--color-primary);
+  border-top: 2px solid var(--color--lime);
+  border-right: 2px solid var(--color--lime);
   opacity: 0.5;
   transition: opacity var(--trans-smooth);
 }
@@ -1001,10 +1089,12 @@ button {
   opacity: 1;
 }
 
-/* --- SOBRE / BIOGRAFIA & TIMELINE --- */
+/* ==========================================================================
+   SOBRE / BIOGRAFIA & TIMELINE ACADÊMICA
+   ========================================================================== */
 .sobre-section {
   padding: var(--section-padding);
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0B0B0F 50%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #0E0E12 50%, var(--bg-deep) 100%);
   position: relative;
 }
 
@@ -1016,9 +1106,9 @@ button {
 }
 
 .sobre-bio-card {
-  background: var(--bg-surface);
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius--med);
   padding: 40px;
   position: relative;
 }
@@ -1027,24 +1117,23 @@ button {
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.6;
-  color: var(--text-white);
-  border-left: 4px solid var(--color-primary);
+  color: var(--color--white);
+  border-left: 4px solid var(--color--lime);
   padding-left: 24px;
   margin-bottom: 32px;
 }
 
 .sobre-quote-box strong {
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
 .sobre-narrative {
   font-size: 1.02rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   line-height: 1.7;
   margin-bottom: 32px;
 }
 
-/* Academic Timeline */
 .timeline-block {
   margin-top: 40px;
 }
@@ -1054,7 +1143,7 @@ button {
   font-size: 1.3rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--text-white);
+  color: var(--color--white);
   letter-spacing: 1px;
   margin-bottom: 24px;
   display: flex;
@@ -1080,10 +1169,10 @@ button {
 
 .timeline-item {
   position: relative;
-  background: #101015;
+  background: #111116;
   border: 1px solid var(--border-subtle);
   padding: 16px 20px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius--small);
   transition: all var(--trans-smooth);
 }
 
@@ -1099,7 +1188,7 @@ button {
 .timeline-logo-pill {
   background: #FFFFFF;
   padding: 4px 10px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1110,7 +1199,7 @@ button {
 
 .timeline-item:hover .timeline-logo-pill {
   transform: scale(1.05);
-  box-shadow: 0 0 16px var(--color-primary-glow);
+  box-shadow: 0 0 16px var(--color--lime-glow);
 }
 
 .timeline-logo-pill img {
@@ -1122,7 +1211,6 @@ button {
   display: block;
 }
 
-/* Lokar header with circular brand logo */
 .destaque-header-with-logo {
   display: flex;
   align-items: center;
@@ -1135,7 +1223,7 @@ button {
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-cyan);
+  border: 2px solid var(--color--cyan);
   box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
   flex-shrink: 0;
   background: #18192E;
@@ -1149,7 +1237,7 @@ button {
 .ggj-brand-logo-container {
   background: #5016A6;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   padding: 4px 8px;
   display: flex;
   align-items: center;
@@ -1174,8 +1262,8 @@ button {
 
 /* Institutional Partners Strip */
 .partners-strip {
-  padding: 50px 0;
-  background: #09090C;
+  padding: 60px 0;
+  background: #0D0D10;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   margin-top: 50px;
@@ -1183,8 +1271,8 @@ button {
 
 .partners-tag {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--color-primary);
+  font-size: var(--text--eyebrow);
+  color: var(--color--lime);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -1196,13 +1284,13 @@ button {
   font-size: 1.8rem;
   font-weight: 800;
   text-align: center;
-  color: var(--text-white);
+  color: var(--color--white);
   text-transform: uppercase;
   margin-bottom: 32px;
 }
 
 .partners-headline span {
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
 .partners-grid {
@@ -1212,10 +1300,10 @@ button {
 }
 
 .partner-card {
-  background: #111116;
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 20px;
+  border-radius: var(--radius--small);
+  padding: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1226,8 +1314,8 @@ button {
 }
 
 .partner-card:hover {
-  border-color: var(--color-primary);
-  background: #15151E;
+  border-color: var(--color--lime);
+  background: #1B1B22;
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(210, 255, 0, 0.15);
 }
@@ -1235,7 +1323,7 @@ button {
 .partner-logo-box {
   background: #FFFFFF;
   padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1263,22 +1351,22 @@ button {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 2px solid var(--color-cyan);
+  border: 2px solid var(--color--cyan);
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
 }
 
 .partner-name {
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: var(--text-white);
+  color: var(--color--white);
   letter-spacing: 0.5px;
 }
 
 .partner-role {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-primary);
+  font-size: 0.6875rem;
+  color: var(--color--lime);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1299,28 +1387,28 @@ button {
 
 .timeline-item.active {
   border-color: var(--border-highlight);
-  background: #14141E;
+  background: #161622;
 }
 
 .timeline-item.active::before {
-  border-color: var(--color-primary);
-  background: var(--color-primary);
-  box-shadow: 0 0 12px var(--color-primary);
+  border-color: var(--color--lime);
+  background: var(--color--lime);
+  box-shadow: 0 0 12px var(--color--lime);
 }
 
 .timeline-item:hover {
   transform: translateX(6px);
-  border-color: var(--color-primary);
+  border-color: var(--color--lime);
 }
 
 .timeline-item:hover::before {
-  border-color: var(--color-primary);
+  border-color: var(--color--lime);
 }
 
 .timeline-tag {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-primary);
+  font-size: 0.6875rem;
+  color: var(--color--lime);
   letter-spacing: 1px;
   font-weight: 700;
   margin-bottom: 4px;
@@ -1330,20 +1418,20 @@ button {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--text-white);
+  color: var(--color--white);
   margin-bottom: 4px;
 }
 
 .timeline-school-desc {
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
 }
 
 /* Skills HUD / Competencies Matrix */
 .skills-hud-card {
-  background: var(--bg-surface);
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius--med);
   padding: 40px;
 }
 
@@ -1352,7 +1440,7 @@ button {
   font-size: 1.4rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--text-white);
+  color: var(--color--white);
   margin-bottom: 24px;
 }
 
@@ -1363,7 +1451,7 @@ button {
 .category-name {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--color-cyan);
+  color: var(--color--cyan);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 12px;
@@ -1381,26 +1469,28 @@ button {
 .tech-tag {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--text-light);
-  background: #0E0E12;
+  color: var(--color--green-off-white-1);
+  background: #111116;
   border: 1px solid var(--border-subtle);
   padding: 6px 14px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--pill);
   transition: all var(--trans-fast);
 }
 
 .tech-tag:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: var(--color-primary-dim);
+  border-color: var(--color--lime);
+  color: var(--color--lime);
+  background: var(--color--lime-dim);
 }
 
-/* --- STATS COUNTER STRIP --- */
+/* ==========================================================================
+   STATS COUNTER STRIP
+   ========================================================================== */
 .stats-strip {
   padding: 60px 0;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
-  background: #0B0B0E;
+  background: #0E0E12;
 }
 
 .stats-grid {
@@ -1418,37 +1508,40 @@ button {
 }
 
 .stat-box:hover {
-  border-left-color: var(--color-primary);
+  border-left-color: var(--color--lime);
 }
 
 .stat-number {
   font-family: var(--font-display);
-  font-size: 3.2rem;
+  font-variation-settings: "wght" 850, "wdth" 93;
+  font-size: 3.5rem;
   font-weight: 900;
-  color: var(--color-primary);
+  color: var(--color--lime);
   line-height: 1;
   margin-bottom: 8px;
-  text-shadow: 0 0 25px rgba(210, 255, 0, 0.3);
+  text-shadow: 0 0 25px rgba(210, 255, 0, 0.35);
 }
 
 .stat-label {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-white);
+  color: var(--color--white);
   margin-bottom: 4px;
 }
 
 .stat-sub {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
 }
 
-/* --- RODAPÉ / CONTATO --- */
+/* ==========================================================================
+   RODAPÉ / CONTATO (High Impact Footer)
+   ========================================================================== */
 .site-footer {
   padding: 120px 0 40px;
-  background: #060608;
+  background: #08080A;
   position: relative;
   border-top: 1px solid var(--border-subtle);
   overflow: hidden;
@@ -1463,24 +1556,26 @@ button {
 
 .footer-impact-title {
   font-family: var(--font-display);
+  font-variation-settings: "wght" 850, "wdth" 93;
   font-size: clamp(2.8rem, 5.5vw, 4.8rem);
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--text-white);
+  color: var(--color--white);
   line-height: 0.95;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.03em;
   margin-bottom: 24px;
 }
 
 .footer-impact-title span.accent {
-  color: var(--color-primary);
+  color: var(--color--lime);
 }
 
 .footer-impact-desc {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
   max-width: 540px;
   margin-bottom: 36px;
+  line-height: 1.6;
 }
 
 /* Social & Contact Buttons */
@@ -1496,13 +1591,13 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 22px;
-  background: #111116;
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--text-light);
+  color: var(--color--white);
   transition: all var(--trans-smooth);
 }
 
@@ -1513,11 +1608,11 @@ button {
 }
 
 .social-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: var(--color-primary-dim);
+  border-color: var(--color--lime);
+  color: var(--color--lime);
+  background: var(--color--lime-dim);
   transform: translateY(-2px);
-  box-shadow: 0 0 20px var(--color-primary-glow);
+  box-shadow: 0 0 20px var(--color--lime-glow);
 }
 
 .social-btn.linkedin:hover {
@@ -1546,34 +1641,35 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #101015;
+  background: var(--bg-carbon);
   border: 1px solid var(--border-subtle);
   padding: 14px 20px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius--small);
   max-width: 480px;
   cursor: pointer;
   transition: all var(--trans-smooth);
 }
 
 .email-copy-box:hover {
-  border-color: var(--color-primary);
-  background: #14141C;
+  border-color: var(--color--lime);
+  background: #1E1E26;
 }
 
 .email-copy-text {
   font-family: var(--font-mono);
   font-size: 0.88rem;
-  color: var(--text-white);
+  color: var(--color--white);
 }
 
 .copy-badge {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-dim);
-  color: var(--color-primary);
-  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius--pill);
+  background: var(--color--lime);
+  color: var(--color--dark-green);
+  font-weight: 700;
+  border: 1px solid var(--color--lime);
 }
 
 /* Footer Telemetry & Copyright */
@@ -1584,10 +1680,10 @@ button {
   flex-wrap: wrap;
   gap: 20px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(244, 244, 237, 0.08);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color--grey-on-track);
 }
 
 .footer-copy {
@@ -1600,7 +1696,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-primary);
+  color: var(--color--lime);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
@@ -1611,18 +1707,20 @@ button {
   transform: translateY(-3px);
 }
 
-/* --- CYBER AUDIO PLAYER DOCK (Floating HUD) --- */
+/* ==========================================================================
+   CYBER AUDIO PLAYER DOCK (Floating Cockpit HUD)
+   ========================================================================== */
 .cyber-audio-dock {
   position: fixed;
   bottom: 24px;
   left: 24px;
   z-index: 999;
-  background: rgba(14, 14, 20, 0.94);
+  background: rgba(17, 17, 18, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color--lime);
+  border-radius: var(--radius--small);
   padding: 8px 16px;
   display: flex;
   align-items: center;
@@ -1632,7 +1730,7 @@ button {
 }
 
 .cyber-audio-dock:hover {
-  border-color: var(--color-primary);
+  border-color: var(--color--lime);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 25px rgba(210, 255, 0, 0.22);
   transform: translateY(-2px);
 }
@@ -1641,8 +1739,8 @@ button {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--color-primary);
-  color: #000000;
+  background: var(--color--lime);
+  color: var(--color--dark-green);
   border: none;
   display: flex;
   align-items: center;
@@ -1654,12 +1752,12 @@ button {
 
 .audio-play-btn:hover {
   transform: scale(1.08);
-  background: #E5FF4D;
-  box-shadow: 0 0 16px var(--color-primary);
+  background: var(--color--white);
+  box-shadow: 0 0 16px var(--color--lime);
 }
 
 .audio-play-btn.playing {
-  background: var(--color-cyan);
+  background: var(--color--cyan);
   color: #000000;
   box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
 }
@@ -1672,7 +1770,7 @@ button {
 .audio-tag {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--color-primary);
+  color: var(--color--lime);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   display: flex;
@@ -1684,7 +1782,7 @@ button {
   font-family: var(--font-display);
   font-size: 0.82rem;
   font-weight: 800;
-  color: var(--text-white);
+  color: var(--color--white);
   letter-spacing: 0.5px;
 }
 
@@ -1700,7 +1798,7 @@ button {
 .equalizer-bar {
   width: 3px;
   height: 4px;
-  background: var(--color-primary);
+  background: var(--color--lime);
   border-radius: 1px;
   transition: height 0.1s ease;
 }
@@ -1740,14 +1838,14 @@ button {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--color-primary);
-  color: #000000;
+  background: var(--color--lime);
+  color: var(--color--dark-green);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 1px;
   padding: 12px 24px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius--small);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(210, 255, 0, 0.5);
   transform: translateY(100px);
   opacity: 0;
@@ -1761,7 +1859,9 @@ button {
   opacity: 1;
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Fluid Layout de landonorris.com)
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1801,7 +1901,7 @@ button {
     top: 70px;
     left: 0;
     width: 100%;
-    background: #0B0B0F;
+    background: #0E0E11;
     border-bottom: 1px solid var(--border-subtle);
     padding: 24px;
     gap: 20px;
