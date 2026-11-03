@@ -14,7 +14,7 @@
   <!-- Google Fonts Preconnect & Variable Fonts (Mona Sans, Space Grotesk, Syne, JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
     <link rel="stylesheet" href="lando-offbrand.css">
@@ -22,6 +22,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/hab-logo.svg">
 </head>
 <body>
+  <!-- Scroll Progress Laser Bar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
   <!-- Page Intro Speed Wipe (Signature landonorris.com Curtain) -->
   <div class="page-intro-wipe" id="pageIntroWipe">
     <div class="intro-logo-flash">
@@ -833,6 +837,27 @@
   <!-- Interactive Toast Notification -->
   <div class="toast-notice" id="toastNotice" role="alert" aria-live="polite">
     E-MAIL COPIADO COM SUCESSO!
+  </div>
+
+  <!-- Scroll Telemetry HUD (F1 Cockpit Speedometer) -->
+  <div class="scroll-telemetry-hud" id="scrollTelemetryHud">
+    <div class="speed-gauge-wrap">
+      <span class="speed-label">SCROLL // VELOCITY</span>
+      <div class="speed-value-row">
+        <span class="speed-number" id="scrollSpeedValue">0</span>
+        <span class="speed-unit">PX/S</span>
+      </div>
+    </div>
+    <div class="speed-rpm-bar" id="rpmBar">
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+      <span class="rpm-segment"></span>
+    </div>
   </div>
 
   <!-- Scripts -->

@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatsCounter();
   initEmailCopy();
   initMobileMenu();
+  initScrollProgressBar();
+  initScrollTelemetryHUD();
+  initScrollParallax();
+  initScrollCardFocus();
 });
 
 /* ==========================================================================
@@ -63,11 +67,13 @@ let lenis = null;
 function initLenisSmoothScroll() {
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      lerp: 0.09,
-      wheelMultiplier: 1,
+      lerp: 0.1,
+      duration: 1.2,
+      wheelMultiplier: 0.9,
       smoothWheel: true,
-      touchMultiplier: 1.5,
-      infinite: false
+      touchMultiplier: 1.8,
+      infinite: false,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
     });
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -820,4 +826,157 @@ function initMobileMenu() {
       menuBtn.textContent = 'MENU ☰';
     });
   });
+}
+
+
+/* ==========================================================================
+   16. SCROLL PROGRESS BAR (Top Laser Bar)
+   ========================================================================== */
+function initScrollProgressBar() {
+  const bar = document.getElementById('scrollProgressBar');
+  if (!bar) return;
+
+  function updateBar() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = progress + '%';
+    requestAnimationFrame(updateBar);
+  }
+  requestAnimationFrame(updateBar);
+}
+
+/* ==========================================================================
+   17. SCROLL TELEMETRY HUD (F1 Cockpit Velocity Speedometer)
+   ========================================================================== */
+function initScrollTelemetryHUD() {
+  const speedEl = document.getElementById('scrollSpeedValue');
+  const rpmBar = document.getElementById('rpmBar');
+  const hud = document.getElementById('scrollTelemetryHud');
+  if (!speedEl || !rpmBar || !hud) return;
+
+  const segments = rpmBar.querySelectorAll('.rpm-segment');
+  let lastY = window.scrollY;
+  let lastTime = performance.now();
+  let velocity = 0;
+  let hideTimeout = null;
+
+  function update() {
+    const now = performance.now();
+    const dt = (now - lastTime) / 1000;
+    const currentY = window.scrollY;
+    const rawVelocity = Math.abs(currentY - lastY) / Math.max(dt, 0.001);
+    
+    // Smooth the velocity
+    velocity = velocity * 0.7 + rawVelocity * 0.3;
+    
+    lastY = currentY;
+    lastTime = now;
+
+    const displaySpeed = Math.round(velocity);
+    speedEl.textContent = displaySpeed;
+
+    // Show/hide HUD based on activity
+    if (displaySpeed > 5) {
+      hud.style.opacity = '1';
+      hud.style.transform = 'translateY(0)';
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(() => {
+        hud.style.opacity = '0';
+        hud.style.transform = 'translateY(10px)';
+      }, 1500);
+    }
+
+    // Update RPM segments
+    const maxSpeed = 2000;
+    const ratio = Math.min(velocity / maxSpeed, 1);
+    const activeCount = Math.round(ratio * segments.length);
+
+    segments.forEach((seg, i) => {
+      seg.classList.remove('active', 'green', 'red');
+      if (i < activeCount) {
+        seg.classList.add('active');
+        if (i >= segments.length - 2) {
+          seg.classList.add('red');
+        } else {
+          seg.classList.add('green');
+        }
+      }
+    });
+
+    requestAnimationFrame(update);
+  }
+
+  // Start hidden
+  hud.style.opacity = '0';
+  hud.style.transform = 'translateY(10px)';
+  requestAnimationFrame(update);
+}
+
+/* ==========================================================================
+   18. SCROLL PARALLAX EFFECTS
+   ========================================================================== */
+function initScrollParallax() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  // Parallax on hero backdrop glow
+  const heroGlow = document.querySelector('.hero-backdrop-glow');
+  if (heroGlow) {
+    gsap.to(heroGlow, {
+      y: 120,
+      scrollTrigger: {
+        trigger: '.hero-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+  }
+
+  // Parallax on destaque media boxes
+  document.querySelectorAll('.destaque-media-box img').forEach(img => {
+    gsap.to(img, {
+      y: -30,
+      scrollTrigger: {
+        trigger: img.closest('.destaque-card') || img,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+  });
+
+  // Parallax on portrait image
+  const portrait = document.querySelector('.lokar-portrait-img');
+  if (portrait) {
+    gsap.to(portrait, {
+      y: -20,
+      scale: 1.02,
+      scrollTrigger: {
+        trigger: portrait.closest('.lokar-portrait-highlight') || portrait,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   19. SCROLL CARD FOCUS (Illuminate current card)
+   ========================================================================== */
+function initScrollCardFocus() {
+  const cards = document.querySelectorAll('.destaque-card');
+  if (cards.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        cards.forEach(c => c.classList.remove('scroll-active'));
+        entry.target.classList.add('scroll-active');
+      }
+    });
+  }, { threshold: [0.5], rootMargin: '-10% 0px' });
+
+  cards.forEach(card => observer.observe(card));
 }
