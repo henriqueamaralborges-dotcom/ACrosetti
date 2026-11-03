@@ -1087,6 +1087,177 @@ button {
   transition: all var(--trans-smooth);
 }
 
+.timeline-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.timeline-logo-pill {
+  background: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform var(--trans-smooth), box-shadow var(--trans-smooth);
+}
+
+.timeline-item:hover .timeline-logo-pill {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px var(--color-primary-glow);
+}
+
+.timeline-logo-pill img {
+  max-height: 22px;
+  max-width: 85px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Lokar header with circular brand logo */
+.destaque-header-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lokar-brand-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+  flex-shrink: 0;
+  background: #18192E;
+  transition: transform var(--trans-smooth);
+}
+
+.destaque-card:hover .lokar-brand-logo {
+  transform: rotate(6deg) scale(1.06);
+}
+
+/* Institutional Partners Strip */
+.partners-strip {
+  padding: 50px 0;
+  background: #09090C;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-top: 50px;
+}
+
+.partners-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.partners-headline {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.partners-headline span {
+  color: var(--color-primary);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.partner-card {
+  background: #111116;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  transition: all var(--trans-smooth);
+}
+
+.partner-card:hover {
+  border-color: var(--color-primary);
+  background: #15151E;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(210, 255, 0, 0.15);
+}
+
+.partner-logo-box {
+  background: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  max-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.partner-logo-box img {
+  max-height: 36px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.partner-logo-box.round {
+  background: transparent;
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  box-shadow: none;
+}
+
+.partner-logo-box.round img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+}
+
+.partner-name {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
+}
+
+.partner-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -1443,6 +1614,9 @@ button {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1478,6 +1652,9 @@ button {
     font-size: 1rem;
   }
   .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .partners-grid {
     grid-template-columns: 1fr;
   }
   .footer-bottom {
