@@ -1494,6 +1494,27 @@ button {
   box-shadow: 0 0 20px var(--color-primary-glow);
 }
 
+.social-btn.linkedin:hover {
+  border-color: #0A66C2;
+  color: #5bb3ff;
+  background: rgba(10, 102, 194, 0.15);
+  box-shadow: 0 0 20px rgba(10, 102, 194, 0.4);
+}
+
+.social-btn.instagram:hover {
+  border-color: #E1306C;
+  color: #ff528a;
+  background: rgba(225, 48, 108, 0.15);
+  box-shadow: 0 0 20px rgba(225, 48, 108, 0.4);
+}
+
+.social-btn.whatsapp:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.15);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
 /* Quick Copy Email Box */
 .email-copy-box {
   display: flex;
