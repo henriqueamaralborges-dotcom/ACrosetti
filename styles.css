@@ -1887,3 +1887,129 @@ body {
   .cyber-audio-dock { bottom: 14px; left: 14px; padding: 6px 12px; gap: 8px; }
   .audio-title { display: none; }
 }
+
+/* ==========================================================================
+   OFF+BRAND SIGNATURE ANIMATIONS & MOTION FX (landonorris.com)
+   ========================================================================== */
+
+/* Page Speed-Line Wipe Intro */
+.page-intro-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--color--black, #111112);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.page-intro-wipe.done {
+  transform: translateY(-100%);
+}
+
+.intro-wipe-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color--lime);
+  box-shadow: 0 0 20px var(--color--lime);
+}
+
+.intro-logo-flash {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color--lime);
+  letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: logoPulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes logoPulse {
+  0% { opacity: 0.35; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Split-Text Line Reveal Masks */
+.text-reveal-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.text-reveal-line {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.text-reveal-line.revealed {
+  transform: translateY(0%);
+}
+
+/* Card 3D Tilt Container */
+.tilt-card {
+  transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ScrollTrigger Animation States */
+[data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-scroll-reveal].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from Left/Right for ON-TRACK / OFF-TRACK */
+[data-scroll-slide="left"] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-scroll-slide="left"].in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-scroll-slide="right"] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-scroll-slide="right"].in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Magnetic Button Physics */
+.magnetic-target {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* High Speed Racing Flash on Click */
+.speed-flash {
+  animation: speedFlashAnim 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes speedFlashAnim {
+  0% { box-shadow: 0 0 0 rgba(210, 255, 0, 0); }
+  50% { box-shadow: 0 0 50px rgba(210, 255, 0, 0.8); }
+  100% { box-shadow: 0 0 20px rgba(210, 255, 0, 0.25); }
+}

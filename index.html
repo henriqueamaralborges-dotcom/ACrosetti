@@ -22,6 +22,14 @@
   <link rel="icon" type="image/svg+xml" href="assets/hab-logo.svg">
 </head>
 <body>
+  <!-- Page Intro Speed Wipe (Signature landonorris.com Curtain) -->
+  <div class="page-intro-wipe" id="pageIntroWipe">
+    <div class="intro-logo-flash">
+      <span>HAB // 01</span>
+    </div>
+    <div class="intro-wipe-line"></div>
+  </div>
+
 
   <!-- Dynamic Cursor Glow FX -->
   <div class="cursor-glow" aria-hidden="true"></div>
@@ -82,9 +90,9 @@
 
           <!-- Impact Headline Replacing Lando Norris -->
           <h1 class="hero-title">
-            <span class="title-line">HENRIQUE</span>
-            <span class="title-line accent">AMARAL</span>
-            <span class="title-line outline">BORGES</span>
+            <span class="text-reveal-mask"><span class="title-line text-reveal-line">HENRIQUE</span></span>
+            <span class="text-reveal-mask"><span class="title-line accent text-reveal-line">AMARAL</span></span>
+            <span class="text-reveal-mask"><span class="title-line outline text-reveal-line">BORGES</span></span>
           </h1>
 
           <!-- Subtitle / Role Replacing Driver Category -->
@@ -817,6 +825,10 @@
   </div>
 
   <!-- Scripts -->
+    <!-- GSAP, ScrollTrigger & Lenis Libraries (Idêntico a landonorris.com) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
