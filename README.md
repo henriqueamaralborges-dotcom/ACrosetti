@@ -42,7 +42,7 @@ Projeto desenvolvido com base na extração do **Design System oficial de [lando
 | **Grid Destaque 2** | **Captação de patrocínio da Lokar Audiovisual** na Fecart e atuação profissional por 1 mês |
 | **Biografia / Sobre** | &ldquo;*Sou um estudante focado em tecnologia, com experiência prática em eventos competitivos e no setor audiovisual. Minha trajetória acadêmica inclui passagens pelo Vital Brasil, Agostiniano Mendel e Exatus.*&rdquo; |
 | **Trajetória Escolar** | Timeline detalhada: **Colégio Vital Brasil**, **Colégio Agostiniano Mendel**, **Colégio Exatus** e formação atual no **Técnico em IA** |
-| **Rodapé / Contato** | E-mail com cópia rápida e links para **LinkedIn** e **GitHub** |
+| **Rodapé / Contato** | E-mail com cópia rápida (`henriqueamaralborges@gmail.com`), WhatsApp direto (`(11) 97481-4897`), Instagram (`@henrique_aborgees`), LinkedIn e GitHub |
 
 ---
 
