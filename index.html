@@ -692,6 +692,26 @@
     </footer>
   </main>
 
+  <!-- Floating Cyber Soundtrack Player Dock (Inspirado em landonorris.com) -->
+  <aside class="cyber-audio-dock" id="cyberAudioDock" aria-label="Controle de Áudio e Trilha Sonora">
+    <button class="audio-play-btn" id="cyberPlayBtn" aria-label="Tocar ou Pausar Trilha Sonora" title="Tocar trilha sonora oficial">
+      <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="pauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <div class="audio-info">
+      <div class="audio-tag">
+        <span>●</span> <span>TRILHA CYBER // HAB-01</span>
+      </div>
+      <div class="audio-title">CYBER MECATRONICS &amp; SPEED</div>
+    </div>
+    <div class="audio-visualizer" aria-hidden="true">
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+    </div>
+  </aside>
+
   <!-- Interactive Toast Notification -->
   <div class="toast-notice" id="toastNotice" role="alert" aria-live="polite">
     E-MAIL COPIADO COM SUCESSO!

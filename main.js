@@ -248,11 +248,21 @@ function initHeroCanvas() {
   requestAnimationFrame(render);
 }
 
-/* --- WEB AUDIO API: FUTURISTIC INTERFACE SOUND FX --- */
+/* --- WEB AUDIO API & SOUNDTRACK PLAYER --- */
 function initAudioFeedback() {
   const toggleBtn = document.getElementById('audioToggle');
+  const dock = document.getElementById('cyberAudioDock');
+  const playBtn = document.getElementById('cyberPlayBtn');
+  const playIcon = document.getElementById('playIcon');
+  const pauseIcon = document.getElementById('pauseIcon');
+
   let audioCtx = null;
   let audioEnabled = false;
+
+  // Background Soundtrack Audio
+  const bgTrack = new Audio('assets/cyber-soundtrack.wav');
+  bgTrack.loop = true;
+  bgTrack.volume = 0.55;
 
   function playTone(freq, type, duration) {
     if (!audioEnabled) return;
@@ -282,16 +292,46 @@ function initAudioFeedback() {
     }
   }
 
+  function setAudioState(enabled) {
+    audioEnabled = enabled;
+    if (audioEnabled) {
+      bgTrack.play().then(() => {
+        if (dock) dock.classList.add('playing');
+        if (playIcon) playIcon.style.display = 'none';
+        if (pauseIcon) pauseIcon.style.display = 'block';
+        if (playBtn) playBtn.classList.add('playing');
+        if (toggleBtn) {
+          toggleBtn.classList.add('active');
+          toggleBtn.innerHTML = '<span>●</span> AUDIO: ON';
+        }
+      }).catch(err => {
+        console.log('Playback require user click', err);
+      });
+      playTone(880, 'sine', 0.1);
+    } else {
+      bgTrack.pause();
+      if (dock) dock.classList.remove('playing');
+      if (playIcon) playIcon.style.display = 'block';
+      if (pauseIcon) pauseIcon.style.display = 'none';
+      if (playBtn) playBtn.classList.remove('playing');
+      if (toggleBtn) {
+        toggleBtn.classList.remove('active');
+        toggleBtn.innerHTML = '<span>○</span> AUDIO: OFF';
+      }
+    }
+  }
+
+  // Toggle button in header
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      audioEnabled = !audioEnabled;
-      toggleBtn.classList.toggle('active', audioEnabled);
-      toggleBtn.innerHTML = audioEnabled 
-        ? '<span>●</span> AUDIO: ON' 
-        : '<span>○</span> AUDIO: OFF';
-      if (audioEnabled) {
-        playTone(880, 'sine', 0.1);
-      }
+      setAudioState(!audioEnabled);
+    });
+  }
+
+  // Play button in floating cyber dock
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      setAudioState(!audioEnabled);
     });
   }
 
