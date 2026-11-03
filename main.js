@@ -1,3 +1,35 @@
+
+let globalAudioCtx = null;
+let globalAudioEnabled = false;
+
+function playSystemTone(freq, type, duration) {
+  if (!globalAudioEnabled) return;
+  try {
+    if (!globalAudioCtx) {
+      globalAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (globalAudioCtx.state === 'suspended') {
+      globalAudioCtx.resume();
+    }
+    const osc = globalAudioCtx.createOscillator();
+    const gain = globalAudioCtx.createGain();
+
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, globalAudioCtx.currentTime);
+
+    gain.gain.setValueAtTime(0.04, globalAudioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, globalAudioCtx.currentTime + duration);
+
+    osc.connect(gain);
+    gain.connect(globalAudioCtx.destination);
+
+    osc.start();
+    osc.stop(globalAudioCtx.currentTime + duration);
+  } catch (e) {
+    console.warn('Audio feedback', e);
+  }
+}
+
 /**
  * HENRIQUE AMARAL BORGES — OFFICIAL ANIMATIONS & INTERACTION ENGINE
  * Sincronizado com os efeitos de alta performance de landonorris.com (OFF+BRAND)
@@ -8,6 +40,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initLenisSmoothScroll();
   initPageIntroWipe();
+  initPageTransitions();
   initHeroTextReveal();
   initScrollAnimations();
   initCard3DTilt();
@@ -51,6 +84,61 @@ function initLenisSmoothScroll() {
       requestAnimationFrame(raf);
     }
   }
+}
+
+
+/* ==========================================================================
+   2. HIGH-SPEED PAGE TRANSITIONS (Official landonorris.com .transition-w)
+   ========================================================================== */
+function initPageTransitions() {
+  const trans = document.getElementById('pageTransition');
+  if (!trans) return;
+
+  const links = document.querySelectorAll('a[href^="#"]');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (!targetId || targetId === '#' || targetId.length <= 1) return;
+
+      const targetElem = document.querySelector(targetId);
+      if (!targetElem) return;
+
+      e.preventDefault();
+
+      // Audio feedback
+      if (typeof playSystemTone === 'function') {
+        playSystemTone(640, 'triangle', 0.12);
+      }
+
+      // 1. Wipe in from bottom
+      trans.classList.remove('exit');
+      trans.classList.add('active');
+
+      // 2. Perform smooth scroll behind transition screen
+      setTimeout(() => {
+        if (lenis) {
+          lenis.scrollTo(targetElem, { offset: -20, duration: 1.2 });
+        } else {
+          targetElem.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+
+      // 3. Wipe out to top
+      setTimeout(() => {
+        trans.classList.add('exit');
+        if (typeof playSystemTone === 'function') {
+          playSystemTone(960, 'sine', 0.08);
+        }
+      }, 620);
+
+      // 4. Reset classes
+      setTimeout(() => {
+        trans.classList.remove('active');
+        trans.classList.remove('exit');
+      }, 1250);
+    });
+  });
 }
 
 /* ==========================================================================
@@ -600,6 +688,7 @@ function initAudioFeedback() {
 
   function setAudioState(enabled) {
     audioEnabled = enabled;
+    globalAudioEnabled = enabled;
     if (audioEnabled) {
       bgTrack.play().then(() => {
         if (dock) dock.classList.add('playing');

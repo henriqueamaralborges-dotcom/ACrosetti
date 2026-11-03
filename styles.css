@@ -2013,3 +2013,95 @@ body {
   50% { box-shadow: 0 0 50px rgba(210, 255, 0, 0.8); }
   100% { box-shadow: 0 0 20px rgba(210, 255, 0, 0.25); }
 }
+
+/* ==========================================================================
+   OFFICIAL HIGH-SPEED TRANSITION SYSTEM (landonorris.com .transition-w)
+   ========================================================================== */
+.transition-w {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color--lime);
+  color: var(--color--dark-green);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: transform 0.55s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: transform;
+}
+
+.transition-w.active {
+  pointer-events: auto;
+  transform: translateY(0%);
+}
+
+.transition-w.exit {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.transition-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.transition-logo {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--color--dark-green);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.transition-bar {
+  width: 260px;
+  height: 5px;
+  background: rgba(40, 44, 32, 0.25);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.transition-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--color--dark-green);
+  transition: width 0.4s ease-out;
+}
+
+.transition-w.active .transition-progress {
+  width: 100%;
+}
+
+.transition-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color--dark-green);
+  text-transform: uppercase;
+}
+
+/* Tab Panel Fade & Scale Transition */
+.hero-view-panel {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-view-panel.active {
+  opacity: 1;
+  transform: scale(1);
+}
